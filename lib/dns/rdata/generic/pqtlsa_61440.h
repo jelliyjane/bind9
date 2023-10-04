@@ -13,15 +13,11 @@
 
 #pragma once
 
-/*!
- *  \brief per rfc6698.txt
- */
-typedef struct dns_rdata_tlsa {
+typedef struct dns_rdata_pqtlsa {
 	dns_rdatacommon_t common;
 	isc_mem_t *mctx;
-	uint8_t usage;
-	uint8_t selector;
-	uint8_t match;
+	uint8_t total_packet_length;
+	uint8_t current_packet_length;
 	uint16_t length;
 	unsigned char *data;
-} dns_rdata_tlsa_t;
+} dns_rdata_pqtlsa_t;
